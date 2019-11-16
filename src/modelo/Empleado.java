@@ -11,13 +11,13 @@ import java.util.Date;
  *
  * @author Usuario
  */
-public class Empleado extends Persona {  
-    
+public class Empleado extends Persona {
+
     private String codEmpleado;
     private String cargo;
     private Date fechaIngreso;
     private double sueldo;
-   private String estad;
+    private String estad;
 
     public Empleado() {
     }
@@ -83,5 +83,5 @@ public class Empleado extends Persona {
     public String toString() {
         return "Empleado{" + "codEmpleado=" + codEmpleado + ", cargo=" + cargo + ", fechaIngreso=" + fechaIngreso + ", sueldo=" + sueldo + ", estad=" + estad + '}';
     }
-   
+
 }
