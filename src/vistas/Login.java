@@ -19,6 +19,7 @@ import modelo.Empleado;
 public class Login extends javax.swing.JFrame {
 
     public static String codigoempleado, codigoadmin,tipousuario;
+    
 
     public Login() {
         initComponents();
@@ -138,6 +139,7 @@ public class Login extends javax.swing.JFrame {
 
     private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtnombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
