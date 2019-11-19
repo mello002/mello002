@@ -18,6 +18,7 @@ public class Empleado extends Persona {
     private Date fechaIngreso;
     private double sueldo;
     private String estad;
+    private String contraseña;
 
     public Empleado() {
     }
@@ -30,14 +31,25 @@ public class Empleado extends Persona {
         this.estad = estad;
     }
 
-    public Empleado(String codEmpleado, String cargo, Date fechaIngreso, double sueldo, String estad, String docIdentidas, String nombre, String apellido, Date fechaNacimiento, String estado) {
+    public Empleado(String codEmpleado, String cargo, Date fechaIngreso, double sueldo, String estad, String docIdentidas, String nombre, String apellido, Date fechaNacimiento, String estado,String pass) {
         super(docIdentidas, nombre, apellido, fechaNacimiento, estado);
         this.codEmpleado = codEmpleado;
         this.cargo = cargo;
         this.fechaIngreso = fechaIngreso;
         this.sueldo = sueldo;
         this.estad = estad;
+        this.contraseña=pass;
     }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+    
+    
 
     public String getCodEmpleado() {
         return codEmpleado;

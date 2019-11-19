@@ -6,12 +6,13 @@
 package controlador;
 
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import modelo.Aula;
 
 public class ControladorAula {
 
-    ArrayList<Aula> lista = new ArrayList<Aula>();
+    public static ArrayList<Aula> lista = new ArrayList<Aula>();
 
     public void registrar_aula(Aula a) {
         lista.add(a);
@@ -21,11 +22,11 @@ public class ControladorAula {
         return lista;
     }
 
-    public void eliminar_aula(String nombre) {
+    public void eliminar_aula(String bloque,String numero) {
         for (int i = 0; i < lista.size(); i++) {
             Aula aula = lista.get(i);
 
-            if (nombre.equalsIgnoreCase(aula.getNombreAula())) {
+            if (bloque.equalsIgnoreCase(aula.getBloque()) && numero.equalsIgnoreCase(aula.getNumeroAula())) {
                 lista.remove(i);
                 JOptionPane.showMessageDialog(null, "Aula Eliminada");
             } else {
@@ -34,12 +35,12 @@ public class ControladorAula {
         }
     }
 
-    public void modificar_aula(String numero, String bloque, String nombrenuevo, String estadonuevo) {
+    public void modificar_aula(String numero,String bloque, String estadonuevo) {
 
         for (int i = 0; i < lista.size(); i++) {
             Aula aula = lista.get(i);
             if (numero.equalsIgnoreCase(aula.getNumeroAula()) && bloque.equalsIgnoreCase(aula.getBloque())) {
-                aula.setNombreAula(nombrenuevo);
+                
                 aula.setEstadoAula(estadonuevo);
                 JOptionPane.showMessageDialog(null, "Modificacion exitosa");
                 break;
@@ -53,5 +54,27 @@ public class ControladorAula {
 
     }
     
+    public JComboBox cargar_aulas(JComboBox combo){
+    
+        for (int i = 0; i < lista.size(); i++) {
+            combo.addItem(lista.get(i).getNumeroAula()+"-"+lista.get(i).getBloque());
+        }
+        return combo;
+    }
+    
+    public JComboBox cargar_numeros(JComboBox combonum){
+        for (int i = 0; i < lista.size(); i++) {
+            combonum.addItem(lista.get(i).getNumeroAula());
+            
+        }
+        return combonum;
+    }
+    
+    public JComboBox cargar_bloques(JComboBox combos){
+        for (int i = 0; i < lista.size(); i++) {
+            combos.addItem(lista.get(i).getBloque());
+        }
+        return combos;
+    }
 
 }

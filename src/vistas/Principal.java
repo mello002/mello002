@@ -7,7 +7,7 @@ package vistas;
 
 /**
  *
- * @author Usuario
+ * @author rosme
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -16,6 +16,12 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+//        if (Login.tipousuario.equalsIgnoreCase("E")) {
+//            menu_administrativo.setEnabled(false);
+//        }else{
+//            menu_empleado.setEnabled(false);
+//        }
+       
     }
 
     /**
@@ -27,21 +33,213 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_empleado = new javax.swing.JMenu();
+        menu_modificar = new javax.swing.JMenuItem();
+        menu_agregar = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        menu_administrativo = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+
+        menu_empleado.setText("Empleado");
+
+        menu_modificar.setText("Modificar informacion ");
+        menu_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_modificarActionPerformed(evt);
+            }
+        });
+        menu_empleado.add(menu_modificar);
+
+        menu_agregar.setText("Agregar solicitud");
+        menu_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_agregarActionPerformed(evt);
+            }
+        });
+        menu_empleado.add(menu_agregar);
+
+        jMenuItem8.setText("Modificar solicitud");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        menu_empleado.add(jMenuItem8);
+
+        jMenuItem1.setText("Reporte de Solicitudes");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menu_empleado.add(jMenuItem1);
+
+        jMenuBar1.add(menu_empleado);
+
+        menu_administrativo.setText("Administrativo ");
+
+        jMenuItem2.setText("Modificar informacion ");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        menu_administrativo.add(jMenuItem2);
+
+        jMenuItem3.setText("Agregar Aula");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        menu_administrativo.add(jMenuItem3);
+
+        jMenuItem4.setText("Modificar Estado de aula");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        menu_administrativo.add(jMenuItem4);
+
+        jMenuItem5.setText("Eliminar aula");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        menu_administrativo.add(jMenuItem5);
+
+        jMenuItem6.setText("Listar aulas");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        menu_administrativo.add(jMenuItem6);
+
+        jMenuItem7.setText("Administrar Solicitudes");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        menu_administrativo.add(jMenuItem7);
+
+        jMenuBar1.add(menu_administrativo);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(panel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panel)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menu_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_modificarActionPerformed
+        // TODO add your handling code here:
+        ModificarEmpleado empleado = new ModificarEmpleado();
+        panel.add(empleado);
+        empleado.show();
+        
+    }//GEN-LAST:event_menu_modificarActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        ModificarAdministrativo informacion = new ModificarAdministrativo();
+        panel.add(informacion);
+        informacion.show();
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        EliminarAula eliaula = new EliminarAula();
+        panel.add(eliaula);
+       eliaula.show();
+        
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void menu_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_agregarActionPerformed
+        // TODO add your handling code here:
+        AgregarSolicitud solicitud = new AgregarSolicitud();
+        panel.add(solicitud);
+        solicitud.show();
+
+    }//GEN-LAST:event_menu_agregarActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        ModificarSolicitud modificar = new ModificarSolicitud();
+        panel.add(modificar);
+        modificar.show();
+
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        AgregarAula aggaula = new AgregarAula();
+        panel.add(aggaula);
+        aggaula.show();
+
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        ModificarAula modaula = new ModificarAula();
+        panel.add(modaula);
+        modaula.show();
+
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        ListarAula lisaula = new ListarAula();
+        panel.add(lisaula);
+        lisaula.show();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+      AdministrarSolicitudes a=new AdministrarSolicitudes();
+      panel.add(a);
+      a.show();
+      
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+     ReporteSolicitudes rs=new ReporteSolicitudes();
+     panel.add(rs);
+     rs.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +277,19 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    public static javax.swing.JMenu menu_administrativo;
+    private javax.swing.JMenuItem menu_agregar;
+    public static javax.swing.JMenu menu_empleado;
+    private javax.swing.JMenuItem menu_modificar;
+    private javax.swing.JDesktopPane panel;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,32 +7,51 @@ package modelo;
 
 import java.util.Date;
 
-/**
- *
- * @author Usuario
- */
+
 public class Solicitud {
     
     private String idSolicitud;
     private String tipoSolicitud;
     private String codigoEmpleado;
-    private Aula aula;
+    private String aula;
     private Date fechaSolicitud;
     private String descripcionSolicitud;
     private String estado;
+    private String respuesta;
 
     public Solicitud() {
     }
 
-    public Solicitud(String idSolicitud, String tipoSolicitud, String codigoEmpleado, Aula aula, Date fechaSolicitud, String descripcionSolicitud, String estado) {
+    public Solicitud(String idSolicitud, String tipoSolicitud, String codigoEmpleado, String nombreaula, Date fechaSolicitud, String descripcionSolicitud, String estado,String respuesta) {
         this.idSolicitud = idSolicitud;
         this.tipoSolicitud = tipoSolicitud;
         this.codigoEmpleado = codigoEmpleado;
-        this.aula = aula;
+        this.aula = nombreaula;
         this.fechaSolicitud = fechaSolicitud;
         this.descripcionSolicitud = descripcionSolicitud;
         this.estado = estado;
+        this.respuesta=respuesta;
     }
+
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
+    
+    
+
+    public String getAula() {
+        return aula;
+    }
+
+    public void setAula(String aula) {
+        this.aula = aula;
+    }
+    
+    
 
     public String getIdSolicitud() {
         return idSolicitud;
@@ -58,13 +77,7 @@ public class Solicitud {
         this.codigoEmpleado = codigoEmpleado;
     }
 
-    public Aula getAula() {
-        return aula;
-    }
-
-    public void setAula(Aula aula) {
-        this.aula = aula;
-    }
+    
 
     public Date getFechaSolicitud() {
         return fechaSolicitud;

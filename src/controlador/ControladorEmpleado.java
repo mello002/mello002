@@ -17,7 +17,7 @@ import modelo.Empleado;
  */
 public class ControladorEmpleado {
     
-    ArrayList<Empleado> lista=new ArrayList<Empleado>();
+    public static ArrayList<Empleado> lista=new ArrayList<Empleado>();
     
     public void registrar_empleado(Empleado e) {
         lista.add(e);
@@ -40,7 +40,7 @@ public class ControladorEmpleado {
         }
     }
     
-    public void modificar_empleado(String codigo,String cargo,Date fecha_ingreso,double sueldo,String edad,String docidentidad,String nombre, String apellido, Date fechaNacimiento, String estado) {
+    public void modificar_empleado(String codigo,String cargo,Date fecha_ingreso,double sueldo,String edad,String docidentidad,String nombre, String apellido, Date fechaNacimiento, String estado,String contraseña) {
 
         for (int i = 0; i < lista.size(); i++) {
             Empleado empleado = lista.get(i);
@@ -54,6 +54,7 @@ public class ControladorEmpleado {
                 empleado.setApellido(apellido);
                 empleado.setFechaNacimiento(fechaNacimiento);
                 empleado.setEstado(estado);
+                empleado.setContraseña(contraseña);
                 JOptionPane.showMessageDialog(null, "Modificacion exitosa");
                 break;
             } else {
