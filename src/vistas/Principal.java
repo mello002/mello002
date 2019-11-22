@@ -16,6 +16,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setSize(1000,800);
 //        if (Login.tipousuario.equalsIgnoreCase("E")) {
 //            menu_administrativo.setEnabled(false);
 //        }else{
@@ -229,9 +230,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+      
       AdministrarSolicitudes a=new AdministrarSolicitudes();
-      panel.add(a);
-      a.show();
+        
+            panel.add(a);
+      a.show();  
+        
+     
       
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
