@@ -79,9 +79,13 @@ public class ReporteSolicitudes extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Estado de Solicitud");
 
+        txtestado.setEditable(false);
+
         lblrespuesta.setText("Respuesta");
 
+        txtrespuesta.setEditable(false);
         txtrespuesta.setColumns(20);
+        txtrespuesta.setLineWrap(true);
         txtrespuesta.setRows(5);
         jScrollPane2.setViewportView(txtrespuesta);
 

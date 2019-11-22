@@ -6,6 +6,7 @@
 package vistas;
 
 import controlador.ControladorAdministrativo;
+import javax.swing.JOptionPane;
 import modelo.Adminstrativo;
 
 /**
@@ -55,6 +56,12 @@ public class RegistrarseAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidosKeyTyped(evt);
+            }
+        });
+
         jLabel2.setText("Cargo");
 
         jLabel7.setText("Apellidos");
@@ -73,13 +80,37 @@ public class RegistrarseAdmin extends javax.swing.JFrame {
 
         jLabel4.setText("Sueldo");
 
+        txtsueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsueldoKeyTyped(evt);
+            }
+        });
+
         jLabel5.setText("Identificacion");
 
         jLabel10.setText("Edad");
 
+        txtidentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidentificacionKeyTyped(evt);
+            }
+        });
+
+        txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtedadKeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("Nombres");
 
         jLabel1.setText("Codigo");
+
+        txtnombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombresKeyTyped(evt);
+            }
+        });
 
         btnRegistrar.setText("Registrarse");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -207,6 +238,61 @@ public class RegistrarseAdmin extends javax.swing.JFrame {
         ctrla.registrar_administrativo(a);
         this.dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtsueldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsueldoKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras!");
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtsueldoKeyTyped
+
+    private void txtidentificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidentificacionKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras!");
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+        
+        if (txtidentificacion.getText().length()==10) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "La identificacion es de, maximo 10 digitos!");
+        }
+    }//GEN-LAST:event_txtidentificacionKeyTyped
+
+    private void txtnombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombresKeyTyped
+       char validar=evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+            evt.consume();
+            
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombresKeyTyped
+
+    private void txtapellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidosKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+            evt.consume();
+            
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidosKeyTyped
+
+    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyTyped
+        if (evt.getKeyChar()<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtedadKeyTyped
 
     /**
      * @param args the command line arguments

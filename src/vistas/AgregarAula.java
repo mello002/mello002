@@ -6,6 +6,7 @@
 package vistas;
 
 import controlador.ControladorAula;
+import javax.swing.JOptionPane;
 import modelo.Aula;
 
 /**
@@ -41,6 +42,12 @@ public class AgregarAula extends javax.swing.JInternalFrame {
         setClosable(true);
 
         jLabel1.setText("Numero de Aula: ");
+
+        txtnumero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnumeroKeyTyped(evt);
+            }
+        });
 
         jLabel2.setText("Bloque de Aula");
 
@@ -103,6 +110,18 @@ public class AgregarAula extends javax.swing.JInternalFrame {
         Aula a=new Aula(txtnumero.getText(),txtbloque.getText(),"",combo_estado.getSelectedItem().toString());
         ctrla.registrar_aula(a);
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtnumeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumeroKeyTyped
+        char validar= evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se permiten letras");
+        }
+        if (validar<'0') {
+            evt.consume();
+            
+        }
+    }//GEN-LAST:event_txtnumeroKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

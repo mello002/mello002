@@ -6,6 +6,7 @@
 package vistas;
 
 import controlador.ControladorEmpleado;
+import javax.swing.JOptionPane;
 import modelo.Empleado;
 
 /**
@@ -57,9 +58,21 @@ public class RegistrarseEmp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtidentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidentificacionKeyTyped(evt);
+            }
+        });
+
         jLabel7.setText("Nombres");
 
         jLabel2.setText("Cargo");
+
+        txtnombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombresKeyTyped(evt);
+            }
+        });
 
         txtcargo.setEditable(false);
         txtcargo.setText("Docente");
@@ -68,9 +81,21 @@ public class RegistrarseEmp extends javax.swing.JFrame {
 
         jLabel3.setText("Fecha Ingreso");
 
+        txtapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidoKeyTyped(evt);
+            }
+        });
+
         jLabel9.setText("Fecha Nacimiento");
 
         jLabel4.setText("Sueldo");
+
+        txtsueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsueldoKeyTyped(evt);
+            }
+        });
 
         jLabel10.setText("Estado");
 
@@ -81,6 +106,12 @@ public class RegistrarseEmp extends javax.swing.JFrame {
         txtestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtestadoActionPerformed(evt);
+            }
+        });
+
+        txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtedadKeyTyped(evt);
             }
         });
 
@@ -214,6 +245,51 @@ public class RegistrarseEmp extends javax.swing.JFrame {
     private void txtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtestadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtestadoActionPerformed
+
+    private void txtsueldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsueldoKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras!");
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtsueldoKeyTyped
+
+    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyTyped
+        if (evt.getKeyChar()<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtedadKeyTyped
+
+    private void txtidentificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidentificacionKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras!");
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+        
+        if (txtidentificacion.getText().length()==10) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "La identificacion tiene maximo, 10 digitos!");
+        }
+    }//GEN-LAST:event_txtidentificacionKeyTyped
+
+    private void txtnombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombresKeyTyped
+        if (evt.getKeyChar()<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombresKeyTyped
+
+    private void txtapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidoKeyTyped
+         if (evt.getKeyChar()<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidoKeyTyped
 
     /**
      * @param args the command line arguments

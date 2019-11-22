@@ -23,6 +23,7 @@ String codigo="",tipo="",codemp="",aula="",fecha="",estado="",desc="";
         txtdescripcion.setEditable(false);
         btnGuardar.setEnabled(false);
         cargar_solicitudes();
+        tabla_solicitudes.setEnabled(false);
         txtrespuesta.setLineWrap(true);
     }
     
@@ -198,8 +199,9 @@ String codigo="",tipo="",codemp="",aula="",fecha="",estado="",desc="";
     }//GEN-LAST:event_tabla_solicitudesMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-       estado=combo_respuesta.getSelectedItem().toString();
-       String r=combo_respuesta.getSelectedItem().toString()+"/n"+txtrespuesta.getText();
+       
+        estado=combo_respuesta.getSelectedItem().toString();
+       String r=combo_respuesta.getSelectedItem().toString()+"\n"+txtrespuesta.getText();
        ControladorAdministrativo ctrla=new ControladorAdministrativo();
        ctrla.responder_solicitud(codigo, estado, r);
        

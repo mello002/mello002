@@ -6,6 +6,7 @@
 package vistas;
 
 import controlador.ControladorAdministrativo;
+import javax.swing.JOptionPane;
 import modelo.Adminstrativo;
 
 /**
@@ -87,9 +88,33 @@ public class ModificarAdministrativo extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Sueldo");
 
+        txtsueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsueldoKeyTyped(evt);
+            }
+        });
+
         jLabel5.setText("Identificacion");
 
+        txtidentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidentificacionKeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("Nombres");
+
+        txtnombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombresKeyTyped(evt);
+            }
+        });
+
+        txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidosKeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("Apellidos");
 
@@ -107,6 +132,12 @@ public class ModificarAdministrativo extends javax.swing.JInternalFrame {
         });
 
         jLabel10.setText("Edad");
+
+        txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtedadKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,6 +247,63 @@ public class ModificarAdministrativo extends javax.swing.JInternalFrame {
        ctrla.modificar_administrativo(txtcodigo.getText(), txtcargo.getText(), txtestado.getText(), Double.parseDouble(txtsueldo.getText()), txtidentificacion.getText(), txtnombres.getText(), txtapellidos.getText(), admin.getFechaNacimiento(), txtcontraseña.getText(), txtedad.getText());
        this.dispose();
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void txtsueldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsueldoKeyTyped
+       char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras");
+        }
+        
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtsueldoKeyTyped
+
+    private void txtidentificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidentificacionKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras");
+        }
+        
+        if (validar<'0') {
+            evt.consume();
+        }
+        
+        if (txtidentificacion.getText().length()==10) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "El numero de identificacion es de maximo 10 digitos");
+        }
+    }//GEN-LAST:event_txtidentificacionKeyTyped
+
+    private void txtnombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombresKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+            evt.consume();
+            
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombresKeyTyped
+
+    private void txtapellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidosKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+            evt.consume();
+            
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidosKeyTyped
+
+    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyTyped
+        if (evt.getKeyChar()<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtedadKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -76,6 +76,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtnumero">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnumeroKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtbloque">
     </Component>

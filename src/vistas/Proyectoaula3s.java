@@ -10,16 +10,12 @@ import controlador.ControladorAula;
 import controlador.ControladorEmpleado;
 import controlador.ControladorSolicitud;
 import java.util.Date;
-import java.util.Vector;
 import modelo.Adminstrativo;
 import modelo.Aula;
 import modelo.Empleado;
 import modelo.Solicitud;
 
-/**
- *
- * @author Usuario
- */
+
 public class Proyectoaula3s {
 
     

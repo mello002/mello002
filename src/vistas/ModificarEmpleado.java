@@ -6,6 +6,7 @@
 package vistas;
 
 import controlador.ControladorEmpleado;
+import javax.swing.JOptionPane;
 import modelo.Empleado;
 
 /**
@@ -91,13 +92,43 @@ public class ModificarEmpleado extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Sueldo");
 
+        txtsueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsueldoKeyTyped(evt);
+            }
+        });
+
         jLabel5.setText("Edad");
+
+        txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtedadKeyTyped(evt);
+            }
+        });
 
         jLabel6.setText("Nro Documento de Identidad");
 
+        txtidentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidentificacionKeyTyped(evt);
+            }
+        });
+
         jLabel7.setText("Nombres");
 
+        txtnombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombresKeyTyped(evt);
+            }
+        });
+
         jLabel8.setText("Apellidos");
+
+        txtapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidoKeyTyped(evt);
+            }
+        });
 
         jLabel9.setText("Fecha Nacimiento");
 
@@ -140,16 +171,15 @@ public class ModificarEmpleado extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtfechaingreso)
-                            .addComponent(txtsueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtedad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtfechaingreso)
+                        .addComponent(txtsueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtidentificacion)
                         .addComponent(txtnombres)
                         .addComponent(txtapellido)
                         .addComponent(txtfechanacimiento)
                         .addComponent(txtestado)
-                        .addComponent(txtcontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)))
+                        .addComponent(txtcontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addComponent(txtedad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(171, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -217,6 +247,50 @@ public class ModificarEmpleado extends javax.swing.JInternalFrame {
         ctrl.modificar_empleado(empleado.getCodEmpleado(), empleado.getCargo(), empleado.getFechaIngreso(), empleado.getSueldo(), empleado.getEstad(), empleado.getDocIdentidas(), empleado.getNombre(), empleado.getApellido(), empleado.getFechaNacimiento(),empleado.getEstado(), empleado.getContraseña());
         this.dispose();
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void txtsueldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsueldoKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras");
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtsueldoKeyTyped
+
+    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyTyped
+        if (evt.getKeyChar()<'0') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtedadKeyTyped
+
+    private void txtidentificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidentificacionKeyTyped
+        char validar=evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "No se admiten letras");
+        }
+        if (validar<'0') {
+            evt.consume();
+        }
+        
+        if (txtidentificacion.getText().length()==10) {
+            JOptionPane.showMessageDialog(null, "La identificacion es de maximo, 10 digitos");
+        }
+    }//GEN-LAST:event_txtidentificacionKeyTyped
+
+    private void txtnombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombresKeyTyped
+        if (Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombresKeyTyped
+
+    private void txtapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidoKeyTyped
+        if (Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

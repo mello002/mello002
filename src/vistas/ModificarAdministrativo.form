@@ -188,6 +188,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtsueldo">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtsueldoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -195,6 +198,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtidentificacion">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtidentificacionKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -202,8 +208,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtnombres">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnombresKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtapellidos">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtapellidosKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -241,6 +253,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtedad">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtedadKeyTyped"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
