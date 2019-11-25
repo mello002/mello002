@@ -21,6 +21,9 @@ public class ControladorAdministrativo {
 
     public void registrar_administrativo(Adminstrativo a) {
         lista.add(a);
+        for (Adminstrativo ad:lista) {
+            System.out.println(ad.getNombre()+" "+ad.getContraseña());
+        }
     }
 
     public ArrayList<Adminstrativo> listar_administrativos() {

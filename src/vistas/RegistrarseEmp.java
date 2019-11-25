@@ -234,11 +234,12 @@ public class RegistrarseEmp extends javax.swing.JFrame {
     Empleado e=new Empleado(txtcodigo.getText(),txtcargo.getText(),fecha_ingreso.getDate(),Double.parseDouble(txtsueldo.getText()),txtedad.getText(),txtidentificacion.getText(),txtnombres.getText(),
     txtapellido.getText(),fecha_nacimiento.getDate(),txtestado.getText(),txtcontraseña.getText());
     ControladorEmpleado ctrle=new ControladorEmpleado();
-    ctrle.registrar_empleado(e);
     Login l=new Login();
     l.setVisible(true);
-    l.setLocationRelativeTo(null);
+    ctrle.registrar_empleado(e);
+    
     this.dispose();
+    
     
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 

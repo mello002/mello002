@@ -237,6 +237,9 @@ public class RegistrarseAdmin extends javax.swing.JFrame {
         ControladorAdministrativo ctrla=new ControladorAdministrativo();
         ctrla.registrar_administrativo(a);
         this.dispose();
+        
+        Login l = new Login();
+        l.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void txtsueldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsueldoKeyTyped

@@ -17,7 +17,7 @@ import modelo.Empleado;
  */
 public class ControladorEmpleado {
     
-    public static ArrayList<Empleado> lista = new ArrayList<Empleado>();
+    public static  ArrayList<Empleado> lista = new ArrayList<Empleado>();
     
     public void registrar_empleado(Empleado e) {
         lista.add(e);
@@ -28,9 +28,7 @@ public class ControladorEmpleado {
     }
     
     public ArrayList<Empleado> listar_empleados() {
-        for (Empleado empleado : lista) {
-            System.out.println("listar empleado: " +empleado.getNombre() + " " + empleado.getContraseña());
-        }
+        
         return lista;
         
     }
